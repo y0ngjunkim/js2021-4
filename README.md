@@ -64,3 +64,9 @@ console.log(1/2);
 console.log(1%2);
 - 문자열
 ① 기본 문자열
+② 이스케이프 문자
+console.log("이름\t나이")
+console.log("안녕\n하세요");
+console.log("\\\\");
+③ 문자열 연결 연산자
+console.log("가나다"+"라마"+"바사아"+"자차카타"+"파하");
