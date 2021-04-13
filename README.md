@@ -1,5 +1,165 @@
 # 김용준 [201840208]
 
+## [04월 13일]
+> 오늘 배운 내용
+### 함수
+#### 함수 생성 방법
+- 익명함수
+- 선언적 함수
+- 화살표 함수
+#### 함수의 기본 형태
+- 함수의 기본 형태
+- 매개 변수가 여러 개인 함수
+#### 함수의 기본 활용 형태
+- 매개 변수와 리턴(1)
+- 매개 변수와 리턴(2)
+#### 함수 매개 변수 초기화
+- 매개 변수를 입력하지 않고 함수 호출
+- 조건문을 활용한 매개 변수 초기화
+- 짧은 초기화 조건문을 활용한 매개 변수 초기화
+#### 콜백 함수
+- 콜백 함수
+#### 표준 내장 함수
+- 숫자 변환 함수
+- 타이머 함수(1)<br>
+setTimeout(함수,시간)<br>
+setInterval(함수,시간)
+- 타이머 함수(2)<br>
+clearInterval() 함수
+> 요약
+### 함수
+#### 함수 생성 방법
+- 익명함수
+>let 함수 = function(){<br>
+    console.log("함수의 첫 번째 줄");<br>
+    console.log("함수의 두 번째 줄");<br>
+};<br><br>
+함수();<br>
+console.log(함수);
+- 선언적 함수
+>function 함수(){<br>
+    console.log("함수의 첫 번째 줄");<br>
+    console.log("함수의 두 번째 줄");<br>
+};<br><br>
+함수();<br>
+console.log(함수);
+- 화살표 함수
+>let 함수 = () => {<br>
+    console.log("함수의 첫 번째 줄");<br>
+    console.log("함수의 두 번째 줄");<br>
+};<br><br>
+함수();<br>
+console.log(함수);
+#### 함수 생성 방법
+> function <함수 이름>(<매개 변수>){<br>
+    <함수코드>{<br>
+    return <리턴 값><br>
+}
+- 함수 기본 형태
+> 함수의 기본 형태<br>
+function power(x){<br>
+    return x * x;<br>
+}<br><br>
+>console.log(power(10));<br>
+console.log(power(20));<br>
+
+>function foo(x){<br>
+    bar = x*x;<br>
+    return bar;<br>
+}
+- 매개 변수가 여러 개인 함수<br>
+>function multiplay(x,y){<br>
+    return x*y;<br>
+}<br><br>
+>console.log(multiplay(10,20));<br>
+console.log(multiplay(20,6));<br>
+- 리턴 없는 함수<br>
+>function print(x){<br>
+    console.log(`"${x}"이라고 말했습니다.`);<br>
+}<br><br>
+>print("안녕하세요");
+#### 함수의 기본 활용 형태
+- 매개 변수와 리턴(1)
+> function sum(min, max){<br>
+    let output = 0;<br>
+    for (let i = min; i<= max; i++){<br>
+        output += i;<br>
+    }<br>
+    return output;<br>
+}<br><br>
+>console.log(sum(1,100));
+- 매개 변수와 리턴(2)
+>function multiplay(min, max){<br>
+    let output = 1;<br>
+    for (let i = min; i<= max; i++){<br>
+        output *= i;<br>
+    }<br>
+    return output;<br>
+}<br><br>
+>console.log(multiplay(1,10));
+#### 함수 매개 변수 초기화
+- 매개 변수를 입력하지 않고 함수 호출
+>function print(name, count){<br>
+    console.log(`${name}이 ${count}개 왔습니다.`)<br>
+}<br><br>
+>print("사과",10);<br>
+print("사과");
+- 조건문을 활용한 매개 변수 초기화
+>function print(name, count){<br>
+    if(!count){<br>
+        count = "수량을 알 수 없습니다.";<br>
+    }<br><br>
+    console.log(`${name}이 ${count}개 있습니다.`)<br>
+}<br><br>
+>print("사과",10);<br>
+print("사과");
+- 짧은 초기화 조건문을 활용한 매개 변수 초기화
+>function print(name, count){<br><br>
+>    count = count || "미입력";<br><br>
+>    console.log(`${name}이 ${count}개 있습니다.`)<br>
+}<br><br>
+>print("사과",10);<br>
+print("사과");
+#### 콜백 함수
+- 콜백 함수
+>function callTentime(callback){<br><br>
+    for (let i = 0; i < 10; i++){<br>
+        callback();<br>
+    }<br>
+}<br><br>
+>callTentime(function(){
+    console.log('함수 호출');
+});
+#### 표준 내장 함수
+- 숫자 변환 함수
+>let inputA = "52";<br>
+let inputB = "52.273";<br>
+let inputC = "1401동";<br>
+let inputD = "1A동입니다.";<br><br>
+>console.log(parseInt(inputA));<br>
+console.log(parseFloat(inputA));<br><br>
+>console.log(parseInt(inputB));<br>
+console.log(parseFloat(inputB));<br><br>
+>console.log(parseInt(inputC));<br>
+console.log(parseInt(inputD));<br><br>
+>console.log(Number(inputA));<br>
+console.log(Number(inputB));<br>
+console.log(Number(inputC));<br>
+console.log(Number(inputD));<br>
+- 타이머 함수(1)
+>setTimeout(function(){<br>
+    console.log("1초가 지났습니다.");<br>
+}, 1000);<br><br>
+>setInterval(function(){<br>
+    console.log("1초 마다 호출됩니다.");<br>
+},1000);<br>
+- 타이머 함수(2)
+>let id = setInterval(function(){<br>
+    console.log("출력합니다.");<br>
+},1000);<br><br>
+setTimeout(function(){<br>
+    clearInterval(id);<br>
+},3000);<br>
 ## [04월 06일]
 > 오늘 배운 내용 요약
 - for문 반복문
