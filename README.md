@@ -1,5 +1,112 @@
 # 김용준 [201840208]
 
+## [04월 27일]
+> 오늘 배운 내용
+#### 타이머 함수
+- setInterval()
+- setTimeout()
+#### 익명 함수와 선언적 함수의 생성 순서
+- 변수 덮어쓰기
+- 함수 덮어쓰기(1)
+- 함수 덮어쓰기(2)
+### 객체
+#### 객체 기본
+- 배열
+#### 객체와 반복문
+- 객체와 반복문
+#### 속성과 메소드
+- 메소드 : 객체의 속성 중 자료형이 함수인 속성
+#### 생성자 함수와 프로토타입
+- 개요
+- 생성자 함수
+> 요약
+#### 타이머 함수
+- setInterval()
+- setTimeout()
+>let foo = setInterval( ()=>{ <br>
+    console.log("출력합니다."); <br>
+},1000);
+
+>setTimeout(function(){<br>
+    clearInterval(foo);<br>
+},3050);
+#### 익명 함수와 선언적 함수의 생성 순서
+- 변수 덮어쓰기
+> let bar;<br>
+bar = 10;<br>
+bar = 20;<br><br>
+console.log(bar);
+- 함수 덮어쓰기(1)
+>let foo;<br>
+foo = () => {console.log("첫번째 함수");}<br>
+foo = ()=>{<br>
+    console.log("두번째 함수");<br>
+}<br><br>
+foo();
+- 함수 덮어쓰기(2)
+>foo = function(){<br>
+    console.log("첫번째 함수");<br>
+}<br>
+function foo(){<br>
+    console.log("두번째 함수");<br>
+}<br><br>
+foo ();
+### 객체
+#### 객체 기본
+- 배열
+>let foo = ['사과', '바나나', '딸기'];<br>
+let product = {<br>
+    제품명 : '건조 망고',<br>
+    유형 : '당절임',<br>
+    원산지: '필리핀'<br>
+}<br>
+>console.log(product);<br><br>
+>console.log(foo[1]);<br>
+console.log(product['원산지']);<br>
+#### 객체와 반복문
+> 생성한 객체에 for in 반복문으로 반복을 적용할 수 있습니다.<br>
+for of 반복문도 적용할 수 있지만, 일반적인 개발에서는 거의 사용하지 않으므로 생략합니다.
+
+>let foo = ['사과', '바나나', '딸기'];<br>
+let product = {<br>
+    제품명 : '건조 망고',<br>
+    유형 : '당절임',<br>
+    원산지: '필리핀'<br>
+    테스트 : 1200<br>
+}<br>
+for(let key in product){<br>
+    for (let key in product){<br>
+        console.log(`${key}: ${product[key]}`);<br>
+    }<br>
+} <br>
+#### 속성과 메소드
+> let foo = ['사과', '바나나', '딸기'];<br>
+let name = 123;<br>
+let product = {<br>
+    name : '건조 망고',<br>
+    유형 : '당절임',<br>
+    원산지: '필리핀',<br>
+    테스트 : 1200,<br>
+    print: function(){<br>
+        console.log(`${this.name} ${this.유형}`);<br>
+    }<br>
+}<br>
+#### 생성자 함수와 프로토타입
+- 개요
+>let foo = [<br>
+    { name: '바나나', price: 1320}, <br>
+    { name: '사과', price: 1000}, <br>
+    { name: '딸기', price: 1500}, <br>
+    { name: '자두', price: 1300}, <br>
+    { name: '복숭아', price: 1220} <br>
+];<br><br>
+function bar (foo) { <br>
+    console.log(`${foo.name} : ${foo.price}`);<br>
+}<br><br>
+for(let foo1 of foo){<br>
+    bar(foo1);<br>
+}
+- 생성자 함수
 ## [04월 13일]
 > 오늘 배운 내용
 ### 함수
