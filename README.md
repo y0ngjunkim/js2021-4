@@ -1,5 +1,72 @@
 # 김용준 [201840208]
 
+## [05월 04일]
+> 오늘 배운 내용
+- 생성자 함수
+- 프로토타입
+### 표준 내장 객체
+#### 기본 자료형과 객체 자료형의 차이
+#### Number 객체
+- 메소드
+- Number 객체
+- String 객체
+>속성과 메소드<br>
+메소드 활용<br>
+>- 문자열 포함, 문자열 분해
+
+> 요약
+- 생성자함수
+>function Product(name, price){<br>
+    this.name = name;<br>
+    this.price = price;<br>
+}<br>
+// 객체를 생성합니다.<br>
+let product = new Product("바나나",1200);<br>
+//출력합니다.<br>
+console.log(product);
+- 프로토타입
+### 표준 내장 객체
+#### 기본 자료형과 객체 자료형의 차이
+> 기본 자료형 숫자의 속성이나 메소드를 사용하면, 자동으로 Number 객체 자료형으로 변환되어 속성이나 메소드를 사용할 수 있습니다.
+#### Number 객체
+- 메소드
+> let foo = 273;<br>
+let bar = 111;<br><br>
+Number.prototype.method = function(){<br>
+    return "Add Method";<br>
+}<br><br>
+console.log(foo.method());
+- Number 객체
+> let foo = Number.MAX_VALUE;<br>
+let bar = Number.MAX_VALUE+1000000;<br><br>
+console.log(foo);<br>
+console.log(bar);<br>
+
+> let foo = Number.MIN_VALUE;<br>
+let bar = Number.MIN_VALUE+1000000;<br><br>
+console.log(foo);<br>
+console.log(bar);<br>
+- String 객체(1) 속성과 메소드
+>let foo = "abcdefgh";<br><br>
+let bar = foo.toUpperCase();<br>
+console.log(foo);<br>
+console.log(bar);<br>
+
+>let foo = "abcdefgh";<br><br>
+let bar = foo.toUpperCase();<br>
+console.log(foo);<br>
+console.log(bar);<br>
+- String 객체(2) 메소드 활용 ※문자열 포함
+>let foo = "안녕하세요. 좋은 아침입니다.";<br><br>
+if(foo.indexOf('아침')>=0){<br>
+    console.log('좋은 아침입니다.');<br>
+} else {<br>
+console.log('안녕히 주무세요.');<br>
+}<br>
+- String 객체(2) 메소드 활용 ※문자열 분해<br>
+>let string = '감자, 고구마, 바나나, 사과';<br><br>
+let array = string.split(',');<br>
+console.log(array);<br>
 ## [04월 27일]
 > 오늘 배운 내용
 #### 타이머 함수
