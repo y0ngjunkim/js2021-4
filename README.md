@@ -1,4 +1,70 @@
 # 김용준 [201840208]
+## [05월 18일]
+> 오늘 배운 내용
+### Node.js 기본
+#### process 객체와 이벤트 개요
+- Node.js의 이벤트 연결 메소드
+- process 객체의 이벤트
+#### os 모듈
+- os 모듈의 메소드
+#### url 모듈
+- url 모듈의 메소드
+#### File System 모듈
+1. 파일 읽기
+    - 파일 읽기 메소드
+2. 비동기 처리의 장점
+3. 파일 쓰기
+    - 파일 쓰기 메소드
+4. 파일 처리와 예외 처리
+    - 동기 코드 예외 처리
+    - 비동기 코드 예외 처리
+
+> 내용 정리
+### Node.js 기본
+#### process 객체와 이벤트 개요
+- Node.js의 이벤트 연결 메소드
+> on(<이벤트 이름>,<이벤트 핸들러>) : 이벤트를 연결합니다.
+- process 객체의 이벤트
+> exit : 프로세스가 종료될 때 발생합니다.<br>
+> uncaughtException : 예외가 일어날 때 발생
+#### os 모듈
+- os 모듈 추출
+> const os = require('os');
+- os 모듈의 메소드
+> hostname() : 운영체제의 호스트 이름을 리턴<br>
+type() : 운영체제의 이름을 리턴<br>
+platform() : 운영체제의 플렛폼을 리턴<br>
+arch() : 운영체제의 아키텍처를 리턴<br>
+release() : 운영체제의 비전을 리턴<br>
+uptime() : 운영체제가 실행된 시간을 리턴<br>
+loadavg() : 로드 에버리지 정보를 담은 배열을 리턴<br>
+totalmem() : 시스템의 총 메모리를 리턴<br>
+freemem() : 시스템의 사용 가능한 메모리를 리턴<br>
+cpus() : CPU의 정보를 담은 객체를 리턴<br>
+getNetworkInterfaces() : 네트워크 인터페이스의 정보를 담은 배열을 리턴
+#### url 모듈
+- url 모듈 추출
+> const url = require('url');
+- url 모듈의 메소드
+> parse(urlStr [,parseQureyString=false, slashesDenoteHost=false]) : URL 문자열을 URL 객체로 변환해 리턴<br>
+format(urlOb) : URL 객체를 URL 문자열로 변환해 리턴<br>
+resolve(from, to) : 매개 변수를 조합하여 완전한 URL 문자열을 생성해 리턴
+#### File System 모듈
+- fs 모듈 추출
+> const fs = require('fs');
+1. 파일 읽기
+    - 파일 읽기 메소드
+    > fs.readFileSync(<파일 이름>) : 동기적으로 파일을 읽어 들임<br>
+    fs.readFile(<파일 이름>,<콜백 함수>) :  비동기적으로 파일을 읽어 들임
+    - 동기와 비동기의 실행 결과는 같지만 내부 실행 구조는 다름
+2. 비동기 처리의 장점
+3. 파일 쓰기
+    - 파일 쓰기 메소드
+    > fs.writeFileSync(<파일 이름>,<문자열>)<br>
+    fs.writeFile(<파일 이름>,<문자열>,<콜백 함수>)
+4. 파일 처리와 예외 처리
+    - 동기 코드 예외처리 : try catch 구문 사용
+    - 비동기 코드 예외처리 : 콜백 함수로 전달된 첫 번째 매개 변수 error를 활용    
 ## [05월 11일]
 > 오늘 배운 내용
 #### Date 객체
@@ -13,7 +79,7 @@
 #### 예외 객체
 #### 예외 강제 발생
 
-> 요약
+> 내용 정리
 #### Date 객체
 >let dateA = new Date();<br>
 console.log(dateA);
@@ -66,7 +132,7 @@ try catch finally 구문을 사용해 예외 처리
 메소드 활용<br>
 >- 문자열 포함, 문자열 분해
 
-> 요약
+> 내용 정리
 - 생성자함수
 >function Product(name, price){<br>
     this.name = name;<br>
@@ -138,7 +204,7 @@ console.log(array);<br>
 #### 생성자 함수와 프로토타입
 - 개요
 - 생성자 함수
-> 요약
+> 내용 정리
 #### 타이머 함수
 - setInterval()
 - setTimeout()
@@ -252,7 +318,7 @@ setTimeout(함수,시간)<br>
 setInterval(함수,시간)
 - 타이머 함수(2)<br>
 clearInterval() 함수
-> 요약
+> 내용 정리
 ### 함수
 #### 함수 생성 방법
 - 익명함수
@@ -387,7 +453,7 @@ setTimeout(function(){<br>
     clearInterval(id);<br>
 },3000);<br>
 ## [04월 06일]
-> 오늘 배운 내용 요약
+> 오늘 배운 내용
 - for문 반복문
 - 역 for 반복문
 - for in 반복문과 for of 반복문
@@ -397,7 +463,7 @@ setTimeout(function(){<br>
 - 스코프
 - 호이스팅
 - var 키워드
-> 요약
+> 내용 정리
 - for문 반복문
 > for (let i = 0; i < <반복 횟수>; i++>){
 }
@@ -438,7 +504,7 @@ let 키워드로 생성한 변수는 해당 블록 내부에서만 사용
 > var 키워드 : 익스플로러
 var 키워드로 생성한 변수는 모든 곳에서 사용
 ## [03월 30일]
-> 오늘 배운 내용 요약
+> 오늘 배운 내용
 - if else if 조건문
 - switch 조건문
 - 삼항 연산자
@@ -447,7 +513,7 @@ var 키워드로 생성한 변수는 모든 곳에서 사용
 - 배열
 - while문
 - for문
-> 요약
+> 내용 정리
 - if else if 조건문<br>
 중복되지 않는 세 가지 이상의 조건을 구분할 때 사용<br>
 if (<불 표현식>){<br>
@@ -495,7 +561,7 @@ for 반복문은 맨 먼저 초기식을 실행하고 조건식을 확인. 조�
 for (let i = 0; i < <반복 횟수>; i++{<br>
 }
 ## [03월 23일]
-> 오늘 배운 내용 요약
+> 오늘 배운 내용 
 - 문자 선택 연산자
 - 탬플릿 문자열
 - 비교 연산자
@@ -519,7 +585,7 @@ for (let i = 0; i < <반복 횟수>; i++{<br>
 - if 조건문
 - if else 조건문
 - 중첩 조건문
-> 요약 <br>
+> 내용 정리 <br>
 
 - 문자 선택 연산자<br>
 console.log(name[1]);<br>
@@ -692,7 +758,7 @@ else if문은 여러번 사용이 가능<br>
 만약 조건1을 틀릴경우 조건2를 검사하지 않음<br>
 
 ## [03월 16일]
-> 오늘 배운 내용 요약
+> 오늘 배운 내용 
 - 자바스크립트 발전
 - 자바스크립트로 할 수 있는 일<br> 
 ① 웹 클라이언트 애플리케이션 개발<br>
@@ -718,7 +784,7 @@ else if문은 여러번 사용이 가능<br>
 - 기본 자료형<br>
 ① 숫자<br>
 ② 문자열
-> 요약
+> 내용 정리
 
 js2021-4 폴더 생성 - 해당 폴더 선택 - 소스 제어
 만약 파일 안보일시 파일 보기에 숨긴 항목 체크
