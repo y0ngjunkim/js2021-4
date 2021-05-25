@@ -1,4 +1,135 @@
 # 김용준 [201840208]
+## [05월 25일]
+>오늘 배운 내용
+### express 모듈
+#### 요청과 응답
+- 요청 메시지, 응답 메시지
+#### express 모듈을 사용한 서버 생성과 실행
+- express 모듈의 기본 매소드
+- express 모듈로 서버 실행과 실행
+#### 페이지 라우팅
+- express 모듈의 페이지 라우팅 메소드
+- 페이지 라우팅
+#### 요청과 응답
+1. response 객체
+    - response 객체의 메소드
+    - MIME 형식
+    - Content-Type 지정 메소드
+    - HTTP 상태 코드
+    - 리다이렉트
+2. request 객체
+    - 요청 매개 변수
+#### 미들웨어
+- 미들웨어 생성 메소드
+1. 정적 파일 제공
+2. morgan 미들웨어
+3. body-parser 미들웨어
+    * 클라이언트에서 서버로 데이터 전송
+    * 요청 본문
+        * 요청 본문의 종류
+    * body-parser 미들웨어
+    * 속성 정리
+### 미니 프로젝트-RESTful 웹 서비스
+#### RESTful 웹 서비스 개요
+- RESTful 웹 서비스의 구조
+- RESTful 웹 서비스
+#### 코드 구성
+#### Postman 크롬 애플리케이션 
+> 내용 정리
+### express 모듈
+명령어 : npm install express@4
+#### 요청과 응답
+- 요청 메시지: 클라이언트가 서버로 보내는 편지
+- 응답 메시지: 서버가 클라이언트로 보내는 편지
+#### express 모듈을 사용한 서버 생성과 실행
+- express 모듈의 기본 매소드
+    > express(): 서버 애플리케이션 객체를 생성<br>
+    app.use(): 요청이 왔을 때 실행할 함수를 지정<br>
+    apop.listen(): 서버를 실행
+#### 페이지 라우팅
+- express 모듈의 페이지 라우팅 메소드
+    >get(path, callback): GET 요청이 발생했을 때 이벤트 리스너를 지정<br>
+    post(path, callback): POST 요청이 발생했을 때 이벤트 리스너를 지정<br> 
+    put(path, callback): PUT 요청이 발생했을 때 이벤트 리스너를 지정<br>
+    delete(path, callback): DELETE 요청이 발생했을 때 이벤트 리스너를 지정<br>
+    all(path, callback): 모든 요청이 발생했을 때 이벤트 리스너를 지정
+- 페이지 라우팅
+#### 요청과 응답
+1. response 객체
+    - response 객체의 매소드
+        >send(): 데이터 본문을 제공<br>
+        status(): 상태 코드를 제공<br>
+        set(): 해더를 설정
+    - MIME 형식
+        > text/plain: 기본적인 텍스트를 의미<br>
+        text/html: html 데이터를 의미<br>
+        image/png: png 데이터를 의미<br>
+        audio/mpe: MP3 음악 파일을 의미<br>
+        video/mpeg: MPEG 비디오 파일을 의미<br>
+        application/json: json 데이터를 의미<br>
+        multipart/form-data: 입력 양식 데이터를 의미 
+    - Content-Type 지정 메소드
+        >type(): Content-Type을 MINE 형식으로 지정
+    - HTTP 상태 코드의 예
+        * HTTP 상태 코드: 404 Not Found
+        * 상태 코드: 서버가 클라이언트에 '해당 경로는 이러한 상태'라고 알려 주는 용도
+        >1XX - 처리중 - 100 Continue<br>
+        2XX - 성공 - 200 OK<br>
+        3XX - 리다이렉트 - 300 Multiple Choices<br>
+        4XX - 클라이언트 오류 - 400 Bad Request<br>
+        5XX - 서버 오류 - 500 Internal Server Error
+        * status() 메소드
+        >status(): 상태 코드를 지정
+    - 리다이렉트
+        * redirect() 메소드
+        >redirect(): 리다이렉트합니다.
+2. request 객체
+    - 요청 매개 변수
+        * 주소 분석
+        >프로토콜 - HTTPS - 통신에 사용되는 규칙을 의미<br>
+        호스트 - (search.)naver.com - 애플리케이션 서버(또는 분산 장치 등)의 위치를 의미<br>
+        URL - search.naver - 애플리케이션 서버 내부에서 라우트 위치를 나타냄<br>
+        요청 매개 변수 - ?where=nexearch&query=초콜릿... - 추가적인 정보를 의미
+#### 미들웨어
+- 미들웨어 생성 메소드
+    >use(): 미들웨어를 설정
+1. 정직 파일 제공
+    >웹 페이지를 만들 때 굉장히 자주 사용하는 기능
+2. morgan 미들웨어
+    >npm install morgan
+3. body-parser 미들웨어
+    > 요청을 분석함
+    * 클라이언트에서 서버로 데이터 전송
+    >URL을 사용한 요청
+    * 요청 본문
+        * 요청 본문의 종류
+        > application/x-www-form-urlencoded: 웹 브라우저에서 입력 양식을 POST, PUT, DELETE 방식 등으로 전달할 때 사용하는 기본적인 요청 형식<br>
+    application/json: JSON 데이터로 요청하는 방식<br>
+    multipart/form-data: 대용량 파일을 전송할 때 사용하는 요청 방식
+    * body-parser 미들웨어
+    > npm install body-parser<br>
+
+    * 속성 정리
+    > params 객체: URL의 토큰을 나타냄. 보기가 간편<br>
+    query 객체: URL의 요청 매개 변수를 나타냄. 토큰보다 많은 데이터를 전달할 수 있으며, 주소로 어떤 데이터가 오고 가는지 확인할 수 있음<br>
+    body 객체: 대용량 문자열 등을 전송할 때 사용. 다만 주소에 데이터를 기록하지 못하므로 새로고침이나 즐겨찾기 기능 등을 활용할 수 없음
+### 미니 프로젝트-RESTful 웹 서비스
+#### RESTful 웹 서비스 개요
+- RESTful 웹 서비스의 구조
+> /collection - /collection/id<br>
+GET - 컬렉션을 조회 - 컬렉션의 특정 요소를 조회<br>
+POST - 컬렉션에 새로운 데이터를 추가 - 사용하지 않음<br>
+PUT - 컬렉션 전체를 한꺼번에 변경 - 컬렉션에 특정한 요소를 수정<br>
+DELETE - 컬렉션 전체를 삭제 - 컬렉션의 특정 요소를 삭제<br>
+- RESTful 웹 서비스
+> GET - /user - 모든 사용자 정보를 조회<br>
+POST - /user - 사용자를 추가<br>
+GET - /user/:id - 특정 사용자 정보를 조회<br>
+PUT - /user/:id - 특정 사용자 정보를 수정<br>
+DELETE - /user/:id - 특정 사용자 정보를 제거
+#### 코드 구성
+#### Postman 크롬 애플리케이션
+ 
 ## [05월 18일]
 > 오늘 배운 내용
 ### Node.js 기본
