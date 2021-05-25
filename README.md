@@ -116,13 +116,13 @@
 ### 미니 프로젝트-RESTful 웹 서비스
 #### RESTful 웹 서비스 개요
 - RESTful 웹 서비스의 구조
-> /collection - /collection/id<br>
+    > /collection - /collection/id<br>
 GET - 컬렉션을 조회 - 컬렉션의 특정 요소를 조회<br>
 POST - 컬렉션에 새로운 데이터를 추가 - 사용하지 않음<br>
 PUT - 컬렉션 전체를 한꺼번에 변경 - 컬렉션에 특정한 요소를 수정<br>
 DELETE - 컬렉션 전체를 삭제 - 컬렉션의 특정 요소를 삭제<br>
 - RESTful 웹 서비스
-> GET - /user - 모든 사용자 정보를 조회<br>
+    > GET - /user - 모든 사용자 정보를 조회<br>
 POST - /user - 사용자를 추가<br>
 GET - /user/:id - 특정 사용자 정보를 조회<br>
 PUT - /user/:id - 특정 사용자 정보를 수정<br>
