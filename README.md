@@ -1,47 +1,171 @@
 # 김용준 [201840208]
+## [06월 01일]
+> 오늘 배운 내용
+### 12.웹 브라우저의 자바스크립트
+#### 1. 사용할 수 없는 코드
+1. let 키워드와 const 키워드
+    > 웹 브라워저에서는 let 키워드와 const 키워드를 사용할 수 없다.
+2. 템플릿 문자열    
+    > 웹 브라우저에서는 템플릿 문자열을 사용할 수 없다.
+3. 화살표 함수
+    > 웹 브라우저에서는 화살표 함수를 사용할 수 없다.<br>
+    함수를 만들 때는 반드시 <b>function</b>키워드를 사용
+4. for of 반복문
+    > 웹 브라우저에서는 for of 반복문을 사용할 수 없다.<br>
+    for of 반복문을 사용하고 싶을 때는 for in 반복문을 사용해 대체
+5. 사용할 수 없는 메소드를 사용한 코드
+    > Array 객체의 forEach() 메소드, map() 메소드, filter() 메소드 활용 할 수 없다.<br>
+    배열과 관련된 처리를 할때는 대부분 반복문을 사용
+#### 2. 브라우저 객체 모델
+> 웹브라우저와 관련된 객체를 브라우저 객체 모델이라고 함
+#### 3. window 객체
+>경고출력을 하는 경고창과 입력을 하는 프롬프트를 제공<br>
+- 경고 함수와 입력함수
+    최신 버전 자바스크립트 코드|인터넷 익스플로러에서 사용해야 하는 코드
+    ---|---|
+    alert(<메세지>) | 경고창을 출력<br>
+    prompt(<메세지>,<임시 글자>) | 프롬프트를 출력
+#### 4. screen 객체
+> 웹 브라우저 화면이 아니라 운영체제 화면의 속성을 가지므로 웹 브라우저마다 속성이 다름
+- screen 객체의 속성
+    속성|설명
+    ---|---|
+    width|화면의 너비
+    height|화면의 높이
+    availWidth|실제 화면에서 사용 가능한 너비
+    availHeight|실제 화면에서 사용 가능한 높이
+    colorDepth|사용 가능한 색상 수
+    pixelDepth|한 픽셀당 비트 수
+#### 5. location 객체와 history 객체
+> 프로토콜의 종류, 호스트 이름, 문서 위치 등 정보가 있다.
+- location 객체의 속성
+    속성|설명
+    ---|---| 
+    href | 문서의 URL 주소
+    host | 호스트 이름과 포트 번호
+    hostname | 호스트 이름
+    port | 포트 번호
+    pathname | 디렉터리 경로
+    hash | 앵커 이름(#~)
+    search | 요청 매개 변수
+    protocol | 프로토콜 종류
+- location 객체의 메소드
+    속성|설명
+    ---|---|
+    assign(<링크>) | 매개 변수로 전달한 위치로 이동
+    reload() | 새로고침
+    replace() | 매개 변수로 전달한 위치로 이동합니다.(뒤로 가기
+ 불가능)
+ #### 6. navigator 객체
+- navigator 객체의 속성
+    속성|설명
+    ---|---| 
+    appCodeName|웹 브라우저의 코드 이름
+    appName|웹 브라우저의 이름
+    appVersion|웹 브라우저의 버전
+    platform|사용 중인 운영체제의 시스템 환경
+    userAgent|웹 브라우저의 전체적인 정보
+
+### 14.jQuery
+#### 1. jQuery 사용 준비
+#### 2. jQuery 객체
+```js
+window.jQuery = windows.$ = jQuery;
+```
+#### 3.문서 객체 선택
+- 객체 탐색 메소드
+    메소드|설명
+    ---|---|
+    parent()|부모 태그를 선택
+    find()|후손 태그를 찾다
+#### 4.문서 객체 개별 조작
+- 선택된 문서 객체의 수
+    속성|설명
+    ---|---|
+    length|선택된 문서 객체의 수를 구한다
+- 선택된 문서 객체 추출
+    메소드|설명
+    ---|---|
+    get()|선택한 문서 객체 중 하나를 선택 
+#### 5.문서 객체 조작
+- 문자 조작
+    메소드|설명
+    ---|---|
+    text()|html 태그 내부의 문자를 조작
+    html()|html 태그 내부의 문자를 조작 
+- 스타일 조작
+    메소드|설명
+    ---|---|
+    css()|스타일을 조작
+- 속성 조작
+    메소드|설명
+    ---|---|
+    attr()|속성을 조작
+#### 6.문서 객체 생성
+```js
+$('<h1></h1>')
+```
+#### 7.이벤트
+메소드|설명
+--|---|
+on()|이벤트를 연결
+off()|이벤트를 제거
+- 이벤트 직접 연결
+    ```js
+    $(<선택자>).on(<이벤트 이름>,<콜백 함수>)
+    ```
+- 이벤트 간접 연결
+    - 이벤트 제거
+        메소드|설명
+        ---|---|
+        one()|이벤트를 한 번만 연결
+#### 8.애니메이션
+```js
+$(<선택자>).animate(<속성>,<시간>,<콜백 함수>)
+``` 
+### 13.문서 객체 모델
+#### 1. 문서 객체 모델
+- 기본 웹 페이지
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>웹 페이지</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <h1>Header 1</h1>
+    <p>Lorem ipsum dolor amet</p>
+</body>
+</html>
+```
+#### 2. 웹 페이지 생성 순서
+#### 3. 문서 객체 선택
+메소드|설명
+---|---|
+document.getElementByld(아이디)|아이디를 사용해 문서 객체를 선택
+document.querySelector(선택자)|선택자를 사용해 문서 객체를 선택
+document.getElementsByName(이름)|name 속성으로 여러 개의 문서 객체를 선택
+document.getElementsByClassName(클래스)|class 속성으로 여러 개의 문서 객체를 선택
+document.querySelectorAll(선택자)|선택자로 여러개의 문서 객체를 선택
+#### 4. 문서 객체조작
+- 글자 조작 : 문서 객체 내부의 글자를 조작할 때는 innerHTML 속성을 사용
+- 스타일 조작: 문서 객체의 스타일을 조작할 때는 style 속성을 사용
+- 속성 조작 : 속성을 조작할 때는 다음 메소드를 사용
+    메소드|설명
+    ---|---|
+    setAttribute(속성 이름,속성 값)|속성을 지정
+    getAttribute(속성 이름)|속성을 추출
 ## [05월 25일]
 >오늘 배운 내용
-### express 모듈
-#### 요청과 응답
-- 요청 메시지, 응답 메시지
-#### express 모듈을 사용한 서버 생성과 실행
-- express 모듈의 기본 매소드
-- express 모듈로 서버 실행과 실행
-#### 페이지 라우팅
-- express 모듈의 페이지 라우팅 메소드
-- 페이지 라우팅
-#### 요청과 응답
-1. response 객체
-    - response 객체의 메소드
-    - MIME 형식
-    - Content-Type 지정 메소드
-    - HTTP 상태 코드
-    - 리다이렉트
-2. request 객체
-    - 요청 매개 변수
-#### 미들웨어
-- 미들웨어 생성 메소드
-1. 정적 파일 제공
-2. morgan 미들웨어
-3. body-parser 미들웨어
-    * 클라이언트에서 서버로 데이터 전송
-    * 요청 본문
-        * 요청 본문의 종류
-    * body-parser 미들웨어
-    * 속성 정리
-### 미니 프로젝트-RESTful 웹 서비스
-#### RESTful 웹 서비스 개요
-- RESTful 웹 서비스의 구조
-- RESTful 웹 서비스
-#### 코드 구성
-#### Postman 크롬 애플리케이션 
-> 내용 정리
-### express 모듈
+### 10.express 모듈
 명령어 : npm install express@4
-#### 요청과 응답
+#### 1. 요청과 응답
 - 요청 메시지: 클라이언트가 서버로 보내는 편지
 - 응답 메시지: 서버가 클라이언트로 보내는 편지
-#### express 모듈을 사용한 서버 생성과 실행
+#### 2. express 모듈을 사용한 서버 생성과 실행
 - express 모듈의 기본 매소드
     > express(): 서버 애플리케이션 객체를 생성<br>
     app.use(): 요청이 왔을 때 실행할 함수를 지정<br>
@@ -135,25 +259,6 @@ DELETE - /user/:id - 특정 사용자 정보를 제거
 ### Node.js 기본
 #### process 객체와 이벤트 개요
 - Node.js의 이벤트 연결 메소드
-- process 객체의 이벤트
-#### os 모듈
-- os 모듈의 메소드
-#### url 모듈
-- url 모듈의 메소드
-#### File System 모듈
-1. 파일 읽기
-    - 파일 읽기 메소드
-2. 비동기 처리의 장점
-3. 파일 쓰기
-    - 파일 쓰기 메소드
-4. 파일 처리와 예외 처리
-    - 동기 코드 예외 처리
-    - 비동기 코드 예외 처리
-
-> 내용 정리
-### Node.js 기본
-#### process 객체와 이벤트 개요
-- Node.js의 이벤트 연결 메소드
 > on(<이벤트 이름>,<이벤트 핸들러>) : 이벤트를 연결합니다.
 - process 객체의 이벤트
 > exit : 프로세스가 종료될 때 발생합니다.<br>
@@ -199,19 +304,6 @@ resolve(from, to) : 매개 변수를 조합하여 완전한 URL 문자열을 생
 ## [05월 11일]
 > 오늘 배운 내용
 #### Date 객체
-#### Array 객체
-- Array 객체의 매소드
-- ECMAScript5에서 추가된 메소드
-#### 프로토타입에 메소드 추가
-#### JSON 객체
-### 예외 처리
-#### 예외와 기본 예외 처리
-#### 고급 예외 처리
-#### 예외 객체
-#### 예외 강제 발생
-
-> 내용 정리
-#### Date 객체
 >let dateA = new Date();<br>
 console.log(dateA);
 #### Array 객체
@@ -251,19 +343,6 @@ try catch finally 구문을 사용해 예외 처리
 > throw '강제 예외';
 ## [05월 04일]
 > 오늘 배운 내용
-- 생성자 함수
-- 프로토타입
-### 표준 내장 객체
-#### 기본 자료형과 객체 자료형의 차이
-#### Number 객체
-- 메소드
-- Number 객체
-- String 객체
->속성과 메소드<br>
-메소드 활용<br>
->- 문자열 포함, 문자열 분해
-
-> 내용 정리
 - 생성자함수
 >function Product(name, price){<br>
     this.name = name;<br>
@@ -279,18 +358,23 @@ console.log(product);
 > 기본 자료형 숫자의 속성이나 메소드를 사용하면, 자동으로 Number 객체 자료형으로 변환되어 속성이나 메소드를 사용할 수 있습니다.
 #### Number 객체
 - 메소드
-> let foo = 273;<br>
+```js
+let foo = 273;<br>
 let bar = 111;<br><br>
-Number.prototype.method = function(){<br>
-    return "Add Method";<br>
-}<br><br>
-console.log(foo.method());
-- Number 객체
-> let foo = Number.MAX_VALUE;<br>
-let bar = Number.MAX_VALUE+1000000;<br><br>
-console.log(foo);<br>
-console.log(bar);<br>
+Number.prototype.method = function(){
+    return "Add Method";
+}
 
+console.log(foo.method());
+```
+- Number 객체
+```js
+let foo = Number.MAX_VALUE;
+let bar = Number.MAX_VALUE+1000000;
+
+console.log(foo);
+console.log(bar);
+```
 > let foo = Number.MIN_VALUE;<br>
 let bar = Number.MIN_VALUE+1000000;<br><br>
 console.log(foo);<br>
@@ -318,24 +402,6 @@ let array = string.split(',');<br>
 console.log(array);<br>
 ## [04월 27일]
 > 오늘 배운 내용
-#### 타이머 함수
-- setInterval()
-- setTimeout()
-#### 익명 함수와 선언적 함수의 생성 순서
-- 변수 덮어쓰기
-- 함수 덮어쓰기(1)
-- 함수 덮어쓰기(2)
-### 객체
-#### 객체 기본
-- 배열
-#### 객체와 반복문
-- 객체와 반복문
-#### 속성과 메소드
-- 메소드 : 객체의 속성 중 자료형이 함수인 속성
-#### 생성자 함수와 프로토타입
-- 개요
-- 생성자 함수
-> 내용 정리
 #### 타이머 함수
 - setInterval()
 - setTimeout()
